@@ -1,0 +1,123 @@
+@import "compass";
+
+$icon-size: 128px;
+$icon-space: 32px;
+$icon-padding: 16px;
+$counter-size: 64px;
+$counter-font-size: 24px;
+$button-font-size: 38px;
+
+$color1: #093161;
+$color2: #FFCC00;
+
+@function remCalc($px, $font-size:16px) {
+	@return $px/$font-size * 1rem;
+}
+
+html {
+	font-size: 16px;
+}
+
+body {
+	background: $color1;
+	margin: 0;
+	color: #E2E9ED;
+	font-family: 'Droid Sans', sans-serif;
+	a {
+		color: $color2;
+		text-decoration: none;
+		@include single-transition(color, 300ms);
+		&:hover,
+		&:focus {
+			color: darken($color2, 5%);
+		}
+		&:active {
+			color: darken($color2, 10%);
+		}
+	}
+}
+
+#stats {
+	text-align: center;
+	ul {
+		list-style: none;
+		margin: remCalc(128px) 0 0 0;
+		padding: 0;
+	}
+	li {
+		@include border-radius(50%);
+		padding: remCalc($icon-padding);
+		display: inline-block;
+		margin: 0 remCalc($icon-space);
+		background: $color2;
+		position: relative;
+	}
+	span,
+	button {
+		position: absolute;
+		top: remCalc($icon-size - 10px);
+		left: remCalc($icon-size - 10px);
+		@include border-radius(50%);
+		background: $color2;
+		width: remCalc($counter-size);
+		height: remCalc($counter-size);
+		line-height: remCalc($counter-size);
+		color: $color1;
+		font-size: remCalc($counter-font-size);
+		display: block;
+	}
+	button {
+		top: remCalc(-20px);
+		left: remCalc(-20px);
+		border: none;
+		cursor: pointer;
+		padding: 0;
+		font-size: remCalc($button-font-size);
+		outline: none;
+	}
+	span {
+		@include single-transition(transform, 300ms);
+		backface-visibility: hidden;
+		font-weight: bold;
+	}
+	span.rotate {
+		@include transform(rotateX(360deg));
+	}
+	svg {
+		width: remCalc($icon-size);
+		height: remCalc($icon-size);
+		fill: $color1;
+		position: relative;
+		z-index: 2;
+	}
+}
+
+#contribution {
+	text-align: center;
+	padding-top: remCalc(64px);
+	font-size: remCalc(21px);
+}
+
+@media (max-width: 720px) {
+	html {
+		font-size: 12px;
+	}
+}
+
+@media (max-width: 520px) {
+	html {
+		font-size: 10px;
+	}
+}
+
+@media (max-width: 430px) {
+	html {
+		font-size: 8px;
+	}
+}
+
+@media (max-width: 340px) {
+	html {
+		font-size: 6px;
+	}
+}

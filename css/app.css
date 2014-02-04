@@ -1,0 +1,121 @@
+html {
+  font-size: 16px;
+}
+
+body {
+  background: #093161;
+  margin: 0;
+  color: #E2E9ED;
+  font-family: 'Droid Sans', sans-serif;
+}
+body a {
+  color: #ffcc00;
+  text-decoration: none;
+  -webkit-transition: color 300ms;
+  -moz-transition: color 300ms;
+  -o-transition: color 300ms;
+  transition: color 300ms;
+}
+body a:hover, body a:focus {
+  color: #e6b800;
+}
+body a:active {
+  color: #cca300;
+}
+
+#stats {
+  text-align: center;
+}
+#stats ul {
+  list-style: none;
+  margin: 8rem 0 0 0;
+  padding: 0;
+}
+#stats li {
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+  padding: 1rem;
+  display: inline-block;
+  margin: 0 2rem;
+  background: #ffcc00;
+  position: relative;
+}
+#stats span,
+#stats button {
+  position: absolute;
+  top: 7.375rem;
+  left: 7.375rem;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+  background: #ffcc00;
+  width: 4rem;
+  height: 4rem;
+  line-height: 4rem;
+  color: #093161;
+  font-size: 1.5rem;
+  display: block;
+}
+#stats button {
+  top: -1.25rem;
+  left: -1.25rem;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  font-size: 2.375rem;
+  outline: none;
+}
+#stats span {
+  -webkit-transition: -webkit-transform 300ms;
+  -moz-transition: -moz-transform 300ms;
+  -o-transition: -o-transform 300ms;
+  transition: transform 300ms;
+  backface-visibility: hidden;
+  font-weight: bold;
+}
+#stats span.rotate {
+  -webkit-transform: rotateX(360deg);
+  -moz-transform: rotateX(360deg);
+  -ms-transform: rotateX(360deg);
+  -o-transform: rotateX(360deg);
+  transform: rotateX(360deg);
+}
+#stats svg {
+  width: 8rem;
+  height: 8rem;
+  fill: #093161;
+  position: relative;
+  z-index: 2;
+}
+
+#contribution {
+  text-align: center;
+  padding-top: 4rem;
+  font-size: 1.3125rem;
+}
+
+@media (max-width: 720px) {
+  html {
+    font-size: 12px;
+  }
+}
+@media (max-width: 520px) {
+  html {
+    font-size: 10px;
+  }
+}
+@media (max-width: 430px) {
+  html {
+    font-size: 8px;
+  }
+}
+@media (max-width: 340px) {
+  html {
+    font-size: 6px;
+  }
+}
